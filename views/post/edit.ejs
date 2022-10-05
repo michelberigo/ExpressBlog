@@ -1,0 +1,31 @@
+<%- contentFor('body') %>
+
+<div class="row">
+  <div class="col-sm-12 pt-3">
+      <h4><small>EDITAR POST</small></h4>
+
+      <hr />
+  </div>
+</div>
+
+<form action="/posts/<%= post._id %>?_method=PUT" method="POST">
+    <div class="form-row">
+        <div class="col-sm-12 form-group my-3">
+        <label for=""><b>Título</b></label>
+        <input type="text" placeholder="Título" name="title" class="form-control" value="<%= post.title %>" required />
+        </div>
+    </div>
+    
+    <div class="form-row">
+        <div class="col-sm-12 form-group my-3">
+        <label for=""><b>Conteúdo</b></label>
+        <textarea name="content" rows="10" class="form-control" placeholder="Conteúdo" required><%= post.content %></textarea>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col-sm-12 text-center">
+        <button type="submit" class="btn btn-success">Atualizar</button>
+        </div>
+    </div>
+</form>
